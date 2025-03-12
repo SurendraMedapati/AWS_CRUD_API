@@ -1,46 +1,45 @@
 name: Deploy DynamoDB CRUD API
 
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
 on:
   push:
-    branches:
-      - main        # Dev Deployment
-      - production  # Prod Deployment
+    branches: [ main ]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # This workflow contains a single job called "deploy"
   deploy:
-    name: Deploy to ${{ matrix.stage }}
+    name: deploy
+
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        stage: [dev, prod]  # ✅ Deploys both dev and prod
-
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v4
 
-      - name: Cache Dependencies
-        uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock', '**/package-lock.json') }}
+    - uses: actions/cache@v4
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 18.x
 
-      - name: Install Dependencies
-        run: yarn install  # or npm install if you use npm
+    - name: Install dependencies
+      run: yarn install
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}  # ✅ Uses the same key for both dev and prod
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2  # ✅ Ensure region is set
+    - name: serverless deploy
+      uses: serverless/github-action@master
+      with:
+        args: deploy
+      env:
+        SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+        # or if using AWS creds directly
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Deploy to ${{ matrix.stage }}
-        run: |
-          npm install -g serverless
-          serverless deploy --stage ${{ matrix.stage }}
