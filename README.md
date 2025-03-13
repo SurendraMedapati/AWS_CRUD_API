@@ -1,8 +1,11 @@
-**📌 Project Overview**
+**📌 Project Overview:**
+
 This project implements a Serverless CRUD API using AWS API Gateway, AWS Lambda, and DynamoDB with the Serverless Framework. The API supports Create, Read, Update, and Delete (CRUD) operations
 without using a direct service proxy integration to DynamoDB.
 
+
 **🌟 Features:**
+
 ✅ Serverless Architecture: AWS Lambda + API Gateway + DynamoDB
 ✅ CI/CD Pipeline: Automated deployments using GitHub Actions
 ✅ Multi-Stage Deployments: Automatically deploys to Dev in AWS, and if successful, triggers deployment to Prod.  
@@ -12,6 +15,7 @@ without using a direct service proxy integration to DynamoDB.
   YAML file organization for better maintainability
   Bash scripts for manual deployment and removal
   AWS Lambda packaging optimizations to improve deployment efficiency
+
 
 
 **🏗️ Tech Stack**
@@ -26,6 +30,7 @@ without using a direct service proxy integration to DynamoDB.
 | 🛠️ IAC        | **Serverless Framework** |
 
 
+
 **📜 API Endpoints**
 
 | Method | Endpoint              | Description               |
@@ -35,6 +40,7 @@ without using a direct service proxy integration to DynamoDB.
 | PUT    | `/post/{postId}`      | Update an existing post  |
 | DELETE | `/post/{postId}`      | Delete a post            |
 | GET    | `/posts`              | Get all posts            |
+
 
 
 **⚙️ Project Structure**
@@ -47,6 +53,7 @@ without using a direct service proxy integration to DynamoDB.
 │── serverless.yml       # Main Serverless Framework configuration
 │── package.json         # Dependencies & scripts
 │── README.md            # Project Documentation
+
 
 
 **🚀 Deployment Process**
@@ -68,6 +75,7 @@ without using a direct service proxy integration to DynamoDB.
   ./scripts/remove.sh prod # Remove Prod deployment
 
 
+
 **🎯 Enhancements & Additional Features**
 
 ✅ AWS Lambda Packaging Optimization
@@ -85,8 +93,10 @@ without using a direct service proxy integration to DynamoDB.
   Useful for debugging or emergency rollbacks.
 
 
+
 **📌 CI/CD Pipeline Screenshot**
 <img width="1449" alt="image" src="https://github.com/user-attachments/assets/d2e98a94-da12-491e-b9b2-167b9a090ff0" />
+
 
 
 **📌 AWS Console Screenshot:**
@@ -94,10 +104,12 @@ without using a direct service proxy integration to DynamoDB.
     <img width="1464" alt="image" src="https://github.com/user-attachments/assets/f974e514-232f-44f6-bf91-308b67030482" />
 
     AWS API Gateway:
-    <img width="1465" alt="image" src="https://github.com/user-attachments/assets/52bcb148-8a68-49fe-a128-a66ceb892846" />
+    ![image](https://github.com/user-attachments/assets/3df80591-e65e-47d8-aa4b-ecd5eba56248)
+
 
     AWS DynamoDB:
-    <img width="1466" alt="image" src="https://github.com/user-attachments/assets/802d8d3e-9cba-46b6-8f8c-c768baa3ded6" />
+    ![image](https://github.com/user-attachments/assets/ccc84800-34b5-49c8-8255-46f0e103fd05)
+
 
 
 **🛠️ Setup & Local Testing**
@@ -111,6 +123,7 @@ without using a direct service proxy integration to DynamoDB.
 
 3️⃣ Deploy locally for testing
   serverless invoke local --function getPost
+
 
 
 **🤝 Contribution & Feedback**
