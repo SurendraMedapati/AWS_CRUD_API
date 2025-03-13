@@ -7,10 +7,15 @@ without using a direct service proxy integration to DynamoDB.
 # 🌟 Features
 
 ✅ Serverless Architecture: AWS Lambda + API Gateway + DynamoDB
+
 ✅ CI/CD Pipeline: Automated deployments using GitHub Actions
+
 ✅ Multi-Stage Deployments: Automatically deploys to Dev in AWS, and if successful, triggers deployment to Prod.  
+
 ✅ Infrastructure as Code (IaC): Fully automated using Serverless Framework
+
 ✅ Optimized Deployment: Excludes unnecessary files for smaller package sizes
+
 ✅ Additional Enhancements:
   YAML file organization for better maintainability
   Bash scripts for manual deployment and removal
@@ -45,14 +50,14 @@ without using a direct service proxy integration to DynamoDB.
 
 # ⚙️ Project Structure
 
-📂 AWS_CRUD_API
-│── 📂 config/           # Configuration files
-│── 📂 functions/        # Lambda function handlers
-│── 📂 scripts/          # Manual deployment & removal scripts
-│── 📂 .github/          # CI/CD pipeline (GitHub Actions)
-│── serverless.yml       # Main Serverless Framework configuration
-│── package.json         # Dependencies & scripts
-│── README.md            # Project Documentation
+📂 AWS_CRUD_API  
+│── 📂 config/             # Configuration files  
+│── 📂 functions/          # Lambda function handlers  
+│── 📂 scripts/            # Manual deployment & removal scripts  
+│── 📂 .github/            # CI/CD pipeline (GitHub Actions)  
+│── 📜 serverless.yml      # Main Serverless Framework configuration  
+│── 📜 package.json        # Dependencies & scripts  
+│── 📜 README.md           # Project Documentation  
 
 
 
@@ -67,12 +72,17 @@ without using a direct service proxy integration to DynamoDB.
 **🔧 Manual Deployment (Optional)**
     Run these scripts if you need manual control:
 
+  
   **Deploy manually**
+  
   ./scripts/deploy.sh dev  # Deploy to Dev
+  
   ./scripts/deploy.sh prod # Deploy to Prod
 
   **Remove manually**
+  
   ./scripts/remove.sh dev  # Remove Dev deployment
+  
   ./scripts/remove.sh prod # Remove Prod deployment
 
 
@@ -80,17 +90,25 @@ without using a direct service proxy integration to DynamoDB.
 # 🎯 Enhancements & Additional Features
 
 ✅ AWS Lambda Packaging Optimization
+
   Excludes unnecessary files like node_modules for faster deployment.
+  
   Reduces package size to improve performance.
 
 ✅ Organized YAML Files
+
   serverless.yml → Main entry file
+  
   config/ → Environment variables and custom settings
+  
   functions/ → Separate YAML files for each function
+  
   resources/ → Infrastructure definitions (DynamoDB, IAM roles)
 
 ✅ Bash Scripts for Manual Deployment
+
   Added scripts (deploy.sh & remove.sh) for manual deployments.
+  
   Useful for debugging or emergency rollbacks.
 
 
