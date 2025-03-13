@@ -1,10 +1,10 @@
-**📌 Project Overview:**
+# 📌 Project Overview
 
 This project implements a Serverless CRUD API using AWS API Gateway, AWS Lambda, and DynamoDB with the Serverless Framework. The API supports Create, Read, Update, and Delete (CRUD) operations
 without using a direct service proxy integration to DynamoDB.
 
 
-**🌟 Features:**
+# 🌟 Features
 
 ✅ Serverless Architecture: AWS Lambda + API Gateway + DynamoDB
 ✅ CI/CD Pipeline: Automated deployments using GitHub Actions
@@ -18,7 +18,7 @@ without using a direct service proxy integration to DynamoDB.
 
 
 
-**🏗️ Tech Stack**
+# 🏗️ Tech Stack
 
 | Component       | Technology Used        |
 |----------------|------------------------|
@@ -31,7 +31,7 @@ without using a direct service proxy integration to DynamoDB.
 
 
 
-**📜 API Endpoints**
+# 📜 API Endpoints
 
 | Method | Endpoint              | Description               |
 |--------|----------------------|---------------------------|
@@ -43,7 +43,7 @@ without using a direct service proxy integration to DynamoDB.
 
 
 
-**⚙️ Project Structure**
+# ⚙️ Project Structure
 
 📂 AWS_CRUD_API
 │── 📂 config/           # Configuration files
@@ -56,27 +56,28 @@ without using a direct service proxy integration to DynamoDB.
 
 
 
-**🚀 Deployment Process**
+# 🚀 Deployment Process
 
-✅ Automated Deployment (CI/CD)
-    1. Push to main branch → Deploys to dev
-    2. If dev is successful, automatically deploys to prod
-    3. Multi-stage support: Dev & Prod are deployed separately
+
+**✅Automated Deployment (CI/CD)**
+  1. Push to main branch → Deploys to dev
+  2. If dev is successful, automatically deploys to prod
+  3. Multi-stage support: Dev & Prod are deployed separately
     
-🔧 Manual Deployment (Optional)
+**🔧 Manual Deployment (Optional)**
     Run these scripts if you need manual control:
 
-  # Deploy manually
+  **Deploy manually**
   ./scripts/deploy.sh dev  # Deploy to Dev
   ./scripts/deploy.sh prod # Deploy to Prod
 
-  # Remove manually
+  **Remove manually**
   ./scripts/remove.sh dev  # Remove Dev deployment
   ./scripts/remove.sh prod # Remove Prod deployment
 
 
 
-**🎯 Enhancements & Additional Features**
+# 🎯 Enhancements & Additional Features
 
 ✅ AWS Lambda Packaging Optimization
   Excludes unnecessary files like node_modules for faster deployment.
@@ -94,25 +95,25 @@ without using a direct service proxy integration to DynamoDB.
 
 
 
-**📌 CI/CD Pipeline Screenshot**
+# 📌 CI/CD Pipeline Screenshot
 <img width="1449" alt="image" src="https://github.com/user-attachments/assets/d2e98a94-da12-491e-b9b2-167b9a090ff0" />
 
 
 
-**📌 AWS Console Screenshot:**
+# 📌 AWS Console Screenshot
     AWS Lambda:
-    <img width="1464" alt="image" src="https://github.com/user-attachments/assets/f974e514-232f-44f6-bf91-308b67030482" />
+  <img width="1464" alt="image" src="https://github.com/user-attachments/assets/f974e514-232f-44f6-bf91-308b67030482" />
 
     AWS API Gateway:
-    ![image](https://github.com/user-attachments/assets/3df80591-e65e-47d8-aa4b-ecd5eba56248)
-
+   <img width="1470" alt="image" src="https://github.com/user-attachments/assets/d9e4926e-301f-4054-9383-fa699103ba31" />
 
     AWS DynamoDB:
-    ![image](https://github.com/user-attachments/assets/ccc84800-34b5-49c8-8255-46f0e103fd05)
+  <img width="1465" alt="image" src="https://github.com/user-attachments/assets/767f9787-29ec-42c1-aecf-dd7c4263183f" />
 
 
 
-**🛠️ Setup & Local Testing**
+
+# 🛠️ Setup & Local Testing
 
 1️⃣ Clone the repository
   git clone https://github.com/yourusername/aws-crud-api.git
@@ -126,7 +127,7 @@ without using a direct service proxy integration to DynamoDB.
 
 
 
-**🤝 Contribution & Feedback**
+# 🤝 Contribution & Feedback
 Feel free to contribute, open issues, or suggest improvements. 🚀
 
 👨‍💻 Author: Surendra Reddy Medapati
