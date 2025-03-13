@@ -1,0 +1,13 @@
+handler: api.getPost
+name: get-post-${self:provider.stage}
+memorySize: 128
+timeout: 5
+events:
+  - http:
+      path: post/{postId}
+      method: GET
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "dynamodb:GetItem"
+    Resource: !GetAtt PostsTable.Arn

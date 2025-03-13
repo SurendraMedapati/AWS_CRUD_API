@@ -1,0 +1,13 @@
+handler: api.deletePost
+name: delete-post-${self:provider.stage}
+memorySize: 128
+timeout: 5
+events:
+  - http:
+      path: post/{postId}
+      method: DELETE
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "dynamodb:DeleteItem"
+    Resource: !GetAtt PostsTable.Arn

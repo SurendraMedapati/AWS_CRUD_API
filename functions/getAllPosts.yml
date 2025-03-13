@@ -1,0 +1,13 @@
+handler: api.getAllPosts
+name: get-all-posts-${self:provider.stage}
+memorySize: 128
+timeout: 5
+events:
+  - http:
+      path: posts
+      method: GET
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "dynamodb:Scan"
+    Resource: !GetAtt PostsTable.Arn

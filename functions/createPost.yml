@@ -1,0 +1,14 @@
+handler: api.createPost
+name: create-post-${self:provider.stage}
+memorySize: 128
+timeout: 5
+events:
+  - http:
+      path: post
+      method: POST
+      cors: true  # ✅ Enables CORS for API Gateway
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "dynamodb:PutItem"
+    Resource: !GetAtt PostsTable.Arn
