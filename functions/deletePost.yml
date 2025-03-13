@@ -1,4 +1,4 @@
-handler: handlers/deletePost.deletePost
+handler: api.deletePost
 name: delete-post-${self:provider.stage}
 memorySize: 128
 timeout: 5

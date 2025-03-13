@@ -1,4 +1,4 @@
-handler: handlers/getAllPosts.getAllPosts
+handler: api.getAllPosts
 name: get-all-posts-${self:provider.stage}
 memorySize: 128
 timeout: 5

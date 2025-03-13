@@ -1,4 +1,4 @@
-handler: handlers/updatePost.updatePost
+handler: api.updatePost
 name: update-post-${self:provider.stage}
 memorySize: 128
 timeout: 5

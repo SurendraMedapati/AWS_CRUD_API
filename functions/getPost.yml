@@ -1,4 +1,4 @@
-handler: handlers/getPost.getPost
+handler: api.getPost
 name: get-post-${self:provider.stage}
 memorySize: 128
 timeout: 5
